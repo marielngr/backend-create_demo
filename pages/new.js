@@ -1,3 +1,4 @@
+//Browser
 import { useRouter } from 'next/router';
 import { mutate } from 'swr';
 import Link from 'next/link';
@@ -19,7 +20,8 @@ export default function NewJokePage() {
     });
 
     const data = await response.json();
-    // #2 invalidate cache (tell pages relying on /api/jokes to fetch data again)
+    // #2 invalidate cache (tell pages relying on /api/jokes to 
+    //fetch data again)
     mutate('/api/jokes');
 
     // #3 redirect
